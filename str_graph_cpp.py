@@ -125,7 +125,6 @@ class DAG:
         Sets up a node containing constant value.
 
         Args:
-
             index(int): The index of the node.
             value(str): The value of the node.
 
@@ -148,7 +147,6 @@ class DAG:
         the given operation and using the children nodes values as input.
 
         Args:
-
             index(int): The index of the node.
             operation(str): The operation, can be one of the following values or other Python str members that returns a string
 
@@ -160,7 +158,7 @@ class DAG:
                   https://docs.python.org/3/library/stdtypes.html#string-methods
 
             children(list of int): The children of the node.
-            is_result: If True, designate the node as the result.
+            is_result(bool): If True, designate the node as the result.
 
         Returns:
             None
@@ -188,7 +186,6 @@ class DAG:
         The DAG nodes will be generated using the calculation logic of f and with param_values as input values.
 
         Features supported in function:
-
             variable assignment
             +: addition is treated as string concat.
             string operations: see set_calc_node() for the type of operations supported.
@@ -197,7 +194,6 @@ class DAG:
                 therefore users shouldn't modified values afterwards using set_const_nodes and expect the conditions to take effect.
 
         Args:
-
             f(callable): The function used to used setup the graph.
             param_values(list of str): A list of string values to be passed to f.
 
@@ -233,7 +229,6 @@ class DAG:
         Deletes a node.
 
         Args:
-
             index(int): The index of the node.
 
         Returns:
@@ -287,7 +282,6 @@ class DAG:
         Executes the graph, prepares the graph and checks for potential cycles and undefined nodes.
 
         Args:
-
             force_python_engine(bool): If True, force the execution to use the Python engine.
                 Otherwise use the CPP Engine when the operation is supported, fall back to the Python engine when necessary.
             verbose(bool): If True, prints the details for each step of the execution.
